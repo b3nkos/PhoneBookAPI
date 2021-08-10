@@ -1,0 +1,13 @@
+### Get all contacts
+GET http://localhost:8080/contacts
+Accept: application/json
+
+### Save new contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "name": "Kurt Smith",
+  "email": "avi@hotmail.com",
+  "phone": "38866363"
+}
