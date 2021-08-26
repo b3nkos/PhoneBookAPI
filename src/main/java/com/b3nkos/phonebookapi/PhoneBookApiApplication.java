@@ -1,7 +1,7 @@
 package com.b3nkos.phonebookapi;
 
-import com.b3nkos.phonebookapi.model.Contact;
-import com.b3nkos.phonebookapi.model.ContactRepository;
+import com.b3nkos.phonebookapi.models.Contact;
+import com.b3nkos.phonebookapi.models.ContactRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

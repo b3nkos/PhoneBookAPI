@@ -1,4 +1,4 @@
-package com.b3nkos.phonebookapi.model;
+package com.b3nkos.phonebookapi.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +19,13 @@ public class Contact {
     }
 
     public Contact(String name, String email, String phone) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public Contact(Long id, String name, String email, String phone) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;

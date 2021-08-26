@@ -1,7 +1,7 @@
-package com.b3nkos.phonebookapi.controller;
+package com.b3nkos.phonebookapi.controllers;
 
-import com.b3nkos.phonebookapi.model.Contact;
-import com.b3nkos.phonebookapi.model.ContactRepository;
+import com.b3nkos.phonebookapi.models.Contact;
+import com.b3nkos.phonebookapi.models.ContactRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
