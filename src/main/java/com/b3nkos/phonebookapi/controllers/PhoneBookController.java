@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(
+        origins = "http://localhost:4200",
+        maxAge = 3600,
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}
+)
 public class PhoneBookController {
 
     private final ContactService contactService;
@@ -30,9 +35,9 @@ public class PhoneBookController {
         return this.contactService.getContactById(id);
     }
 
-    @PutMapping("/contacts")
-    public Contact updateContact(@RequestBody Contact contact) {
-        return contactService.updateContact(contact);
+    @PutMapping("/contacts/{id}")
+    public Contact updateContact(@PathVariable Long id, @RequestBody Contact contact) {
+        return contactService.updateContact(id, contact);
     }
 
     @DeleteMapping("/contacts/{id}")

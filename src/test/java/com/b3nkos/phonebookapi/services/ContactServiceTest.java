@@ -64,7 +64,7 @@ class ContactServiceTest {
         when(contactRepository.findById(1L)).thenReturn(Optional.of(contactFound));
         when(contactRepository.save(expectedContact)).thenReturn(expectedContact);
 
-        var actualContact = contactService.updateContact(expectedContact);
+        var actualContact = contactService.updateContact(1L, expectedContact);
 
         assertThat(actualContact)
                 .as("actual contact should not be null in save operation")

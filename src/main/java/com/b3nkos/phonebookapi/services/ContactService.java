@@ -33,8 +33,8 @@ public class ContactService {
         return contact;
     }
 
-    public Contact updateContact(Contact contact) {
-        final var contactFound = contactRepository.findById(contact.getId()).orElseThrow();
+    public Contact updateContact(Long id, Contact contact) {
+        final var contactFound = contactRepository.findById(id).orElseThrow();
         return contactRepository.save(contact);
     }
 }
