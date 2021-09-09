@@ -2,6 +2,7 @@ package com.b3nkos.phonebookapi.controllers;
 
 import com.b3nkos.phonebookapi.models.Contact;
 import com.b3nkos.phonebookapi.services.ContactService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class PhoneBookController {
     }
 
     @PostMapping("/contacts")
+    @ResponseStatus(HttpStatus.CREATED)
     public Contact saveNewContact(@RequestBody Contact contact) {
         return this.contactService.saveContact(contact);
     }

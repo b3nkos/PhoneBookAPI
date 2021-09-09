@@ -1,11 +1,18 @@
 package com.b3nkos.phonebookapi.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,36 +21,9 @@ public class Contact {
     private String email;
     private String phone;
 
-    protected Contact() {
-
-    }
-
     public Contact(String name, String email, String phone) {
         this.name = name;
         this.email = email;
         this.phone = phone;
-    }
-
-    public Contact(Long id, String name, String email, String phone) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
     }
 }

@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -62,7 +63,7 @@ class ContactServiceTest {
         final var contactFound = new Contact(1L, "Jhon Doe", "jhon@gmail.com", "988-3493-233");
 
         when(contactRepository.findById(1L)).thenReturn(Optional.of(contactFound));
-        when(contactRepository.save(expectedContact)).thenReturn(expectedContact);
+        when(contactRepository.save(any(Contact.class))).thenReturn(expectedContact);
 
         var actualContact = contactService.updateContact(1L, expectedContact);
 

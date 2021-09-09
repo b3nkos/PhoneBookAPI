@@ -5,6 +5,7 @@ import com.b3nkos.phonebookapi.models.ContactRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ContactService {
@@ -35,6 +36,11 @@ public class ContactService {
 
     public Contact updateContact(Long id, Contact contact) {
         final var contactFound = contactRepository.findById(id).orElseThrow();
-        return contactRepository.save(contact);
+
+        Optional.ofNullable(contact.getName()).ifPresent(contactFound::setName);
+        Optional.ofNullable(contact.getEmail()).ifPresent(contactFound::setEmail);
+        Optional.ofNullable(contact.getPhone()).ifPresent(contactFound::setPhone);
+
+        return contactRepository.save(contactFound);
     }
 }
